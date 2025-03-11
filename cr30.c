@@ -28,7 +28,7 @@ void compress_tab(int tab_brut[],int tab_compress[]){
     int compteur = 0;
     int i;
     int j = 0;
-    for(i = 0;i != -1;i++){
+    for(i = 0;i < MAX -1 ;i++){
         if(tab_brut[i] == tab_brut[i+1]){
             compteur++;
         }
