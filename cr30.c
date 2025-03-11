@@ -25,19 +25,20 @@ void affiche_brut(int brut[]) {
 }
 
 void compress_tab(int tab_brut[],int tab_compress[]){
-    int compteur = 0;
+    int compteur = 1;
     int i;
     int j = 0;
-    for(i = 0;i < MAX -1 ;i++){
+    for(i = 0;i < MAX + 1 ;i++){
         if(tab_brut[i] == tab_brut[i+1]){
             compteur++;
         }
-        else{ if(compteur == 0){
+        else{ if(compteur == 1){
                 tab_compress[j] = tab_brut[i];
                 j++;
             }
             else{tab_compress[j] = compteur;
-                tab_compress[j + 1] = tab_brut[i];
+                j++;
+                tab_compress[j] = tab_brut[i - 1];
                 j++;
                 compteur = 0;
             }
